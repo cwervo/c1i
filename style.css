@@ -5,38 +5,13 @@ body {
     background-color: #456;
     background-color: #345;
     background-color: #234;
-    background-color: #123;
+    /* background-color: #123; */
 
     margin: 3% 10%;
-    font-size: 1.5em;
+    font-size: 14pt;
     font-family: "IBM Plex Mono", monospace;
+    font-weight: 300;
 }
-
-.float {
-    position: absolute;
-}
-
-a:hover {
-  color: magenta;
-  letter-spacing: 2rem;
-}
-
-a:visited {
-  color: magenta;
-}
-
-/* TODO: make something to float to the right the info */
-
-.todo {
-  background-color: gold;
-  color: white;
-  font-size: 1.6rem;
-}
-
-/*
-TODO: some sort of gradient mesh or radial gradient thing with CSS colors in the background IDK lol
-*/
-
 @media (prefers-color-scheme: light) {
   body {
     color: #456;
@@ -44,7 +19,79 @@ TODO: some sort of gradient mesh or radial gradient thing with CSS colors in the
   }
 }
 
+.bold {
+  font-weight: 700;
+}
 
+.italicize {
+  font-style: italic;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.float {
+    position: absolute;
+}
+
+a {
+  color: cyan;
+}
+
+a:visited {
+  color: magenta;
+}
+
+
+a:hover {
+  color: lavender;
+  letter-spacing: 1px;
+}
+
+.todo {
+  background-color: gold;
+  color: navy;
+  font-size: 1.6rem;
+}
+
+/*
+TODO: some sort of gradient mesh or radial gradient thing with CSS colors in the background IDK lol
+*/
+
+/* ====== Table styles ===== */
+caption {
+  text-decoration: underline;
+  font-size: 1.6em;
+  text-align: left;
+  margin-bottom: 0.5cm;
+}
+
+table.stylize {
+  margin-right: auto;
+  margin-left: 0px;
+  text-align: left;
+}
+
+table.stylize th,
+table.stylize > tbody > tr > td {
+  border-right: 1px solid white;
+  border: 1px solid white;
+  padding: 0 0.76rem;
+}
+
+@media print {
+  table.stylize th,
+  table.stylize > tbody > tr > td {
+    border-right: 1px solid #234;
+    border: 1px solid #234;
+    padding-top: 0.2cm;
+    padding-bottom: 0.2cm;
+  }
+}
+
+
+/* ===== Typography ===== */
 .ibm-plex-mono-thin {
   font-family: "IBM Plex Mono", monospace;
   font-weight: 100;
@@ -85,4 +132,33 @@ TODO: some sort of gradient mesh or radial gradient thing with CSS colors in the
   font-family: "IBM Plex Mono", monospace;
   font-weight: 700;
   font-style: normal;
+}
+
+/* ===== Print Styles ===== */
+
+@media print {
+  @page {
+    size: Letter portrait;
+    margin: 0;
+    outline: 20px dashed magenta;
+  }
+  body {
+    font-size: 12pt;
+    margin: 2.2cm;
+    margin-right: 4cm;
+    margin-bottom: 3cm;
+    /* outline: 1px dashed gold; */
+  }
+
+  a, a:visited {
+    color: navy;
+  }
+
+  h1, h2, h3, h4, h5 {
+    page-break-after: avoid;
+  }
+
+  .todo {
+    display: none;
+  }
 }
