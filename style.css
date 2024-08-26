@@ -1,21 +1,117 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Noto+Sans+Mono:wght@100..900&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
-body {
-    color: #DDD;
-    background-color: #456;
-    background-color: #345;
-    background-color: #234;
-    /* background-color: #123; */
+body, h1, h2, h3, p, ul, ol, table {
+  margin: 0;
+  padding: 0;
+}
 
-    margin: 3% 10%;
-    font-size: 14pt;
-    font-family: "IBM Plex Mono", monospace;
-    font-weight: 400;
+body {
+  background-color: #123;
+  color: #DDD;
+  margin: 0 auto;
+  padding: 20px;
+  font-size: 16px;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 1200px;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 h1, h2, h3 {
   text-decoration: underline;
+  margin-bottom: 15px; /* Add some space after headings */
 }
+
+h1 {
+  font-size: 1.8em; /* Larger font size for main heading */
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.2em;
+}
+
+/* Improve readability for paragraphs and list items */
+p, li {
+  margin-bottom: 10px;
+}
+
+.course-info {
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.course-info dt {
+  font-weight: bold;
+  margin-top: 10px;
+  color: #9af; /* Light blue color for term */
+}
+
+.course-info dd {
+  margin-left: 0;
+  margin-bottom: 10px;
+}
+
+/* Mobile-first styles */
+.course-info {
+  display: block;
+}
+
+.course-info dt,
+.course-info dd {
+  padding: 5px 0;
+}
+
+/* Tablet and desktop styles */
+@media screen and (min-width: 768px) {
+  .course-info {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px 20px;
+    align-items: baseline;
+  }
+  
+  .course-info dt {
+    grid-column: 1;
+    margin-top: 0;
+    text-align: right;
+    padding-right: 10px;
+  }
+  
+  .course-info dd {
+    grid-column: 2;
+    margin-bottom: 5px;
+  }
+}
+
+/* Additional styles for links within the definition list */
+.course-info a {
+  color: cyan;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.course-info a:hover,
+.course-info a:focus {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Style for the bold class, if used within the definition list */
+.course-info .bold {
+  font-weight: 700;
+}
+
 
 @media (prefers-color-scheme: light) {
   body {
@@ -37,17 +133,17 @@ h1, h2, h3 {
 }
 
 .float {
-    position: absolute;
+  position: absolute;
 }
 
 a {
   color: cyan;
+  word-wrap: break-word; /* Prevent long URLs from breaking layout */
 }
 
 a:visited {
   color: magenta;
 }
-
 
 a:hover {
   color: lavender;
@@ -55,38 +151,42 @@ a:hover {
 }
 
 #homepageLink {
-  font-size: 2em;
+  font-size: 1.2em;
   text-decoration: underline;
+  margin-bottom: 20px;
 }
 
 .todo {
   background-color: gold;
   color: navy;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
+  padding: 5px;
+  margin: 10px 0;
 }
-
-/*
-TODO: some sort of gradient mesh or radial gradient thing with CSS colors in the background IDK lol
-*/
 
 /* ====== Table styles ===== */
 caption {
   text-decoration: underline;
-  font-size: 1.6em;
+  font-size: 1.2em;
   text-align: left;
-  margin-bottom: 0.5cm;
+  margin-bottom: 10px;
+}
+
+table {
+  max-width: 100%;
+  width: 100%;
+  margin-bottom: 20px;
+  border-collapse: collapse;
 }
 
 table.stylize {
-  margin-right: auto;
-  margin-left: 0px;
+  margin: 0 auto;
   text-align: left;
-  width: 90%;
+  width: 100%;
 }
 
-
 table.stylize > tbody > tr > td:nth-child(1) {
-  width: 20%;
+  width: auto; /* Allow cells to adjust based on content */
 }
 
 table.stylize thead {
@@ -95,24 +195,42 @@ table.stylize thead {
 
 table.stylize th,
 table.stylize > tbody > tr > td {
-  /* /* border-right: 1px solid white;
-  border-left: 1px solid white; */
-  /* border-bottom: 1px solid white; */
-  /* border-top: 1px solid white; */
-  /* border: 1px solid white; */
-  padding: 0 0.76rem;
+  padding: 8px;
+  border-bottom: 1px solid #456; /* Add lines between rows for better readability */
 }
 
-@media print {
-  table.stylize th,
-  table.stylize > tbody > tr > td {
-    /* border-right: 1px solid #234; */
-    /* border: 1px solid #234; */
-    padding-top: 0.2cm;
-    padding-bottom: 0.2cm;
+/* Responsive table for mobile */
+@media screen and (max-width: 600px) {
+  table.stylize, table.stylize thead, table.stylize tbody, table.stylize th, table.stylize td, table.stylize tr {
+    display: block;
+  }
+  
+  table.stylize thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  
+  table.stylize tr {
+    margin-bottom: 15px;
+  }
+  
+  table.stylize td {
+    border: none;
+    position: relative;
+    padding-left: 50%;
+  }
+  
+  table.stylize td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    font-weight: bold;
   }
 }
-
 
 /* ===== Typography ===== */
 .ibm-plex-mono-thin {
@@ -192,5 +310,33 @@ table.stylize > tbody > tr > td {
 
   .hideOnPrint {
     display: none;
+  }
+}
+
+/* ===== Responsive Design ===== */
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+
+  .container {
+    padding: 3% 5%;
+    max-width: 1200px;
+  }
+
+  #homepageLink {
+    font-size: 1.5em;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  h3 {
+    font-size: 1.5em;
   }
 }
