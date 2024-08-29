@@ -178,6 +178,11 @@ a:hover {
   margin-bottom: 20px;
 }
 
+
+.todo::before {
+  content: '⚠️ TODO: ';
+}
+
 .todo {
   background-color: gold;
   color: navy;
