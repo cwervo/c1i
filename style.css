@@ -179,6 +179,17 @@ a:hover {
 }
 
 
+a[href="#"] {
+  color: #999;
+}
+
+a[href="#"]::after {
+  content: " (coming soon)";
+  font-size: 0.8em;
+  color: #999;
+}
+
+
 .todo::before {
   content: '⚠️ TODO: ';
 }
