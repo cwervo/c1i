@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Noto+Sans+Mono:wght@100..900&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
-/* body, h1, h2, h3, p, ul, ol, table {
-  margin: 0;
-  padding: 0;
-} */
-
 body {
   background-color: #123;
   color: #DDD;
@@ -16,6 +11,26 @@ body {
   line-height: 1.6;
   max-width: 1200px;
 }
+
+.title {
+  font-size: 1.4rem;
+}
+
+summary {
+    cursor: pointer;
+}
+
+details > summary { list-style-type: '↦️'; }
+
+details[open] > summary { list-style-type: '↧'; }
+
+details {
+    border: 1px solid gray;
+    border-radius: 26px;
+    padding: 0.5rem;
+}
+
+details[open] > summary { margin-bottom: 0.5rem; }
 
 .container {
   width: 100%;
