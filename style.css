@@ -51,13 +51,6 @@ h3 { font-size: 1.2em; }
 /* Improve readability for paragraphs and list items */
 p, li { margin-bottom: 10px; }
 
-@media (prefers-color-scheme: light) {
-  body {
-    color: #456;
-    background-color: #DDD;
-  }
-}
-
 .bold {
   font-weight: 700;
 }
@@ -84,7 +77,7 @@ a:visited {
 }
 
 a:hover {
-  color: lavender;
+  color: #7FDBFF;
   letter-spacing: 1px;
 }
 
@@ -297,5 +290,19 @@ table.stylize > tbody > tr > td {
 
   h3 {
     font-size: 1.5em;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    color: #456;
+    background-color: #DDD;
+  }
+  a {
+    color: #0074D9;
+  }
+  a:hover {
+    color: #001f3f;
+    letter-spacing: 1px;
   }
 }
